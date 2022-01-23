@@ -1,5 +1,6 @@
 'use strict';
 
+
 //grab a form
 const form = document.querySelector('.form-inline');
 
@@ -44,6 +45,6 @@ const config = {
             firebasePush(inputEmail);
 
             //shows alert if everything went well.
-            return alert('Data Successfully Sent to Realtime Database');
+            return alert('Thanks for signing up! You have successfully joined the waitlist.');
         })
     }
