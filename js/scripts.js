@@ -13,7 +13,7 @@ const form = document.querySelector('.form-inline');
 
 //grab an input
 const inputEmail = form.querySelector('#inputEmail');
-
+const inputShop = form.querySelector('#inputShop');
 
 //config your firebase push
 const config = {
@@ -28,7 +28,7 @@ const config = {
   };
 
 //create a functions to push
-    function firebasePush(input) {
+    function firebasePush(email, shoplink) {
 
         console.log("in firebase push method");
         //prevents from braking
@@ -39,7 +39,8 @@ const config = {
         //push itself
         var mailsRef = firebase.database().ref('emails').push().set(
             {
-                mail: input.value
+                mail: email.value,
+                shop: shoplink.value
             }
         );
         console.log("push mailsRef");
@@ -51,7 +52,7 @@ const config = {
         form.addEventListener('submit', function (evt) {
             console.log("listening for form");
             evt.preventDefault();
-            firebasePush(inputEmail);
+            firebasePush(inputEmail, inputShop);
             console.log("after calling piush function");
             //shows alert if everything went well.
             return alert('Thanks for signing up! You have successfully joined the waitlist.');
