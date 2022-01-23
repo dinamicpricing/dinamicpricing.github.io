@@ -36,6 +36,10 @@ const config = {
             firebase.initializeApp(config);
         }
         console.log("after initializing app");
+        console.log("email value");
+        console.log(email.value);
+        console.log("shop link value");
+        console.log(shoplink.value);
         //push itself
         var mailsRef = firebase.database().ref('emails').push().set(
             {
