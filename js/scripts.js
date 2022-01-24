@@ -35,7 +35,8 @@ const config = {
         if (!firebase.apps.length) {
             firebase.initializeApp(config);
         }
-        console.log("after initializing app");
+        console.log("another console log");
+        console.log("after initializing appps");
         console.log("email value");
         console.log(email.value);
         console.log("shop link value");
